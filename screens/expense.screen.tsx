@@ -29,7 +29,7 @@ function ExpenseScreen() {
   );
 
   if (!transaction) {
-    return;
+    return <View></View>;
   }
 
   return (

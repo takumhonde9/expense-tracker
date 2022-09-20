@@ -3,7 +3,6 @@ import { Pressable, StyleProp, View, ViewStyle } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { colors } from "../../theme/ui";
 import { defaultSettings } from "../../settings";
-import { styles } from "react-native-actions-sheet/dist/src/styles";
 
 type Icon = "delete";
 type ActualIcon = "trash-can-outline";
