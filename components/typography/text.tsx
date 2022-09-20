@@ -1,4 +1,4 @@
-import { Text, StyleSheet, StyleProp, TextStyle } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { colors } from "../../theme/ui";
 import { TextProps } from "../../types/components/text.type";
 
@@ -29,6 +29,19 @@ const styles = StyleSheet.create({
   subtitle: {
     color: colors.light.primary,
     fontSize: 12,
+  },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    color: "#dfdfdf",
+    marginBottom: 16,
+  },
+  button: {
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+    fontWeight: "bold",
+    fontSize: 14,
   },
 });
 

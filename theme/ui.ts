@@ -17,13 +17,13 @@ export const colors: Colors = {
     secondary: "#000000",
   },
   dark: {
-    primary: "#000000",
+    primary: "#131124",
     secondary: "#F1F1F1",
   },
   success: "#4dc330",
   error: "#ad3c3c",
   warning: "#ee8521",
-  "base-600": "#121212",
-  accent: "#20063B",
+  "base-600": "#191423",
+  accent: "#ca6023",
   "accent-variant": "#20063B",
 };

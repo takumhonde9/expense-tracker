@@ -1,6 +1,11 @@
 import { StyleProp, TextStyle } from "react-native";
 
-export type TextVariant = "text" | "title" | "subtitle";
+export type TextVariant =
+  | "text"
+  | "title"
+  | "subtitle"
+  | "sectionTitle"
+  | "button";
 
 export type TextProps =
   | { style?: StyleProp<TextStyle>; variant?: TextVariant } & (

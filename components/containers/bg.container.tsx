@@ -17,8 +17,7 @@ function BgContainer({ children, variant }: BgContainerProps) {
 const styles = StyleSheet.create({
   base: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 16,
   },
   primary: {
     backgroundColor: colors[defaultSettings.theme].primary,
