@@ -4,4 +4,5 @@ export type Card = {
   type: "visa" | "mastercard";
   balance: number;
   percentage: number;
+  id: string;
 };

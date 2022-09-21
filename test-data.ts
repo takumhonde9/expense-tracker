@@ -19,6 +19,7 @@ export const visaCard: Card = {
   type: "visa",
   balance: 1000,
   percentage: 1,
+  id: "card-1",
 };
 
 export const masterCard: Card = {
@@ -27,4 +28,5 @@ export const masterCard: Card = {
   type: "mastercard",
   balance: 500,
   percentage: 0.7,
+  id: "card-2",
 };

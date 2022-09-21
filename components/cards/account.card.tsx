@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 16,
     borderRadius: 12,
-    height: 200,
+    height: 225,
     elevation: 10,
     shadowColor: "#0d0d0d",
     shadowRadius: 6,

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import { colors } from "../../theme/ui";
 import { defaultSettings } from "../../settings";
 
@@ -10,7 +10,11 @@ type BgContainerProps = {
 
 function BgContainer({ children, variant }: BgContainerProps) {
   return (
-    <View style={[styles.base, styles[variant || "primary"]]}>{children}</View>
+    <SafeAreaView>
+      <View style={[styles.base, styles[variant || "primary"]]}>
+        {children}
+      </View>
+    </SafeAreaView>
   );
 }
 

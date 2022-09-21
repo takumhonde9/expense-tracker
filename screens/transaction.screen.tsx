@@ -11,9 +11,9 @@ import BgContainer from "../components/containers/bg.container";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ExpenseScreenButtonGroup from "../components/groups/expense-screen-button.group";
 
-type ExpenseScreenRouteProp = RouteProp<RootStackParamsList, "Expense">;
+type ExpenseScreenRouteProp = RouteProp<RootStackParamsList, "Transaction">;
 
-function ExpenseScreen() {
+function TransactionScreen() {
   const route = useRoute<ExpenseScreenRouteProp>();
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamsList>>();
@@ -128,4 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ExpenseScreen;
+export default TransactionScreen;

@@ -31,10 +31,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   sectionTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     textTransform: "uppercase",
-    color: "#dfdfdf",
+    color: "#a9a9a9",
     marginBottom: 16,
   },
   button: {

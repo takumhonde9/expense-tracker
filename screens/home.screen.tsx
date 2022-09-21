@@ -1,15 +1,23 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import SettingsButton from "../components/buttons/settings.button";
-import { ScrollView, StyleSheet, View, LogBox } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import Text from "../components/typography/text";
 import AccountCard from "../components/cards/account.card";
 import SummaryStatistic from "../components/statistics/summary.statistic";
 import List from "../components/list/list";
-import { transactions, masterCard, visaCard } from "../test-data";
+import { masterCard, visaCard } from "../test-data";
+import { useAppSelector } from "../store/hooks";
+import { getRecentTransactions } from "../store/slices/transaction.slice";
+import ActionButton from "../components/buttons/action.button";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootStackParamsList } from "../navigators/root-stack.navigator";
 
 function HomeScreen() {
-  const navigation = useNavigation();
+  const transactions = useAppSelector(getRecentTransactions);
+
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamsList>>();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -47,7 +55,7 @@ function HomeScreen() {
           <SummaryStatistic direction="up" title="Expenses" value={35} />
         </View>
         <View style={{ marginTop: 32 }}>
-          <Text variant="sectionTitle">Transactions</Text>
+          <Text variant="sectionTitle">Recent Transactions</Text>
           <List items={transactions} />
         </View>
       </View>

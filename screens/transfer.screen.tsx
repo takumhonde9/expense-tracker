@@ -2,12 +2,12 @@ import React from "react";
 import Text from "../components/typography/text";
 import BgContainer from "../components/containers/bg.container";
 
-function ExpensesScreen() {
+function AddTransactionScreen() {
   return (
     <BgContainer>
-      <Text>Expenses</Text>
+      <Text>Make Transfer</Text>
     </BgContainer>
   );
 }
 
-export default ExpensesScreen;
+export default AddTransactionScreen;

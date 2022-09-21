@@ -16,13 +16,13 @@ function TransactionCard({ item }: TransactionCardProps) {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamsList>>();
 
-  const goToExpense = () =>
-    navigation.navigate("Expense", {
+  const goToTransaction = () =>
+    navigation.navigate("Transaction", {
       id: item.id,
     });
 
   return (
-    <Pressable style={styles.pressable} onPress={goToExpense}>
+    <Pressable style={styles.pressable} onPress={goToTransaction}>
       <View style={styles.container}>
         <View style={styles.icon}></View>
         <View style={styles.contentContainer}>

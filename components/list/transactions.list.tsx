@@ -1,11 +1,11 @@
 import React from "react";
-import { Expense } from "../../types/transaction.type";
+import { Transaction } from "../../types/transaction.type";
 import { FlatList } from "react-native";
 import TransactionCard from "../cards/transaction.card";
 
-function ExpensesList({ items }: { items: Expense[] }) {
-  const renderItem = ({ item }: { item: Expense }) => (
-    <TransactionCard item={item} variant="expense" />
+function TransactionsList({ items }: { items: Transaction[] }) {
+  const renderItem = ({ item }: { item: Transaction }) => (
+    <TransactionCard item={item} />
   );
 
   return (
@@ -17,4 +17,4 @@ function ExpensesList({ items }: { items: Expense[] }) {
   );
 }
 
-export default ExpensesList;
+export default TransactionsList;

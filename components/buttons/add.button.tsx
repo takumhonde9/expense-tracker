@@ -1,15 +1,25 @@
-import React, { useRef } from "react";
 import { View, StyleSheet, Pressable } from "react-native";
 import { Octicons } from "@expo/vector-icons";
 import { colors } from "../../theme/ui";
+import { SheetManager } from "react-native-actions-sheet";
+import { ADD_ITEM_SHEET } from "../../registers/action-sheet/constants";
 
-function AddTransactionButton() {
+function AddButton() {
+  // const [isVisible, setIsVisible] = useState(false);
+  //
+  // const open = () => setIsVisible(true);
+  // const close = () => setIsVisible(false);
   return (
-    <Pressable style={styles.container}>
-      <View style={styles.button}>
-        <Octicons name="plus" size={25} color="#f1f1f1" />
-      </View>
-    </Pressable>
+    <>
+      <Pressable
+        style={styles.container}
+        onPress={() => SheetManager.show(ADD_ITEM_SHEET)}
+      >
+        <View style={styles.button}>
+          <Octicons name="plus" size={25} color="#f1f1f1" />
+        </View>
+      </Pressable>
+    </>
   );
 }
 
@@ -34,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddTransactionButton;
+export default AddButton;

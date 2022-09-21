@@ -1,9 +1,12 @@
+export type TransactionType = "expense" | "income";
+
 export type Transaction = {
-  category: string;
+  category?: string;
   date: string;
   amount: number;
-  note: string;
+  note?: string;
   title: string;
   id: string;
-  type: "expense" | "income";
+  type: TransactionType;
+  cardId?: string;
 };

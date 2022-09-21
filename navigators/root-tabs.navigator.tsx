@@ -1,21 +1,20 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/home.screen";
-import SettingsNavigator from "./settings.navigator";
 import AnalyticsScreen from "../screens/analytics.screen";
-import ExpensesScreen from "../screens/expenses.screen";
+import TransactionsScreen from "../screens/transactions.screen";
 import AccountsScreen from "../screens/accounts.screen";
 import NavigationIcon from "../components/icons/navigation.icon";
 import AddTransaction from "../components/add-transaction";
-import AddTransactionButton from "../components/buttons/add-transaction.button";
+import AddTransactionButton from "../components/buttons/add.button";
 
 type TabsParamsList = {
   Home: undefined;
   Analytics: undefined;
-  Expenses: undefined;
+  Transactions: undefined;
   Settings: undefined;
   Accounts: undefined;
-  AddTransaction: undefined;
+  AddTransactionButton: undefined;
 };
 
 const Tabs = createBottomTabNavigator<TabsParamsList>();
@@ -61,7 +60,7 @@ function RootTabsNavigator() {
         }}
       />
       <Tabs.Screen
-        name="AddTransaction"
+        name="AddTransactionButton"
         component={AddTransaction}
         options={{
           tabBarBadgeStyle: {
@@ -83,8 +82,8 @@ function RootTabsNavigator() {
         }}
       />
       <Tabs.Screen
-        name="Expenses"
-        component={ExpensesScreen}
+        name="Transactions"
+        component={TransactionsScreen}
         options={{
           tabBarBadgeStyle: {
             width: "20%",
