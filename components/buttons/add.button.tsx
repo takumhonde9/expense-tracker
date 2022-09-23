@@ -5,10 +5,6 @@ import { SheetManager } from "react-native-actions-sheet";
 import { ADD_ITEM_SHEET } from "../../registers/action-sheet/constants";
 
 function AddButton() {
-  // const [isVisible, setIsVisible] = useState(false);
-  //
-  // const open = () => setIsVisible(true);
-  // const close = () => setIsVisible(false);
   return (
     <>
       <Pressable

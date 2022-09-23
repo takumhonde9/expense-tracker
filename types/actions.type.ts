@@ -1,6 +1,16 @@
-type Icon = "currency-usd" | "credit-card-plus-outline" | "bank-transfer";
+type Icon =
+  | "currency-usd"
+  | "credit-card-plus-outline"
+  | "bank-transfer"
+  | "cash"
+  | "piggy-bank-outline";
 
-export type Action = "add-transaction" | "add-account" | "make-transfer";
+export type Action =
+  | "add-transaction"
+  | "add-account"
+  | "make-transfer"
+  | "expense"
+  | "income";
 
 export type Item = {
   [key in Action]: {

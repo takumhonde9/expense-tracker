@@ -9,9 +9,9 @@ import List from "../components/list/list";
 import { masterCard, visaCard } from "../test-data";
 import { useAppSelector } from "../store/hooks";
 import { getRecentTransactions } from "../store/slices/transaction.slice";
-import ActionButton from "../components/buttons/action.button";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamsList } from "../navigators/root-stack.navigator";
+import RNPickerSelect from "@react-native-picker/picker";
 
 function HomeScreen() {
   const transactions = useAppSelector(getRecentTransactions);

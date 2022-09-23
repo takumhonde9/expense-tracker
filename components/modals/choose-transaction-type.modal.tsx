@@ -2,16 +2,12 @@ import React from "react";
 import Modal from "react-native-modal";
 import { Dimensions, View, StyleSheet } from "react-native";
 import ActionButton from "../buttons/action.button";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamsList } from "../../navigators/root-stack.navigator";
-import { SheetManager } from "react-native-actions-sheet";
-import {
-  ADD_ITEM_SHEET,
-  MAKE_TRANSFER_SHEET,
-} from "../../registers/action-sheet/constants";
+import Text from "../typography/text";
+import { TransactionType } from "../../types/transaction.type";
 
 type AddActionModalProps = {
+  value: string;
+  onChange: Function;
   isVisible: boolean;
   close: () => void;
 };
@@ -19,22 +15,15 @@ type AddActionModalProps = {
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-function AddActionModal({ isVisible, close }: AddActionModalProps) {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamsList>>();
-
-  const closeWrapper = (action: () => void) => {
+function ChooseTransactionTypeModal({
+  onChange,
+  isVisible,
+  close,
+}: AddActionModalProps) {
+  const handleOnChange = (type: TransactionType) => {
+    onChange(type);
     close();
-    action();
   };
-
-  const addTransaction = () => {
-    navigation.navigate("AddTransaction", {
-      id: "",
-      type: "expense",
-    });
-  };
-  const addAccount = () => navigation.navigate("AddAccount");
 
   return (
     <Modal
@@ -56,27 +45,19 @@ function AddActionModal({ isVisible, close }: AddActionModalProps) {
           <View style={styles.indicatorContainer}>
             <View style={styles.indicator} />
           </View>
-          <View
-            style={{
-              alignItems: "flex-start",
-              flex: 1,
-            }}
-          >
+          <View style={styles.header}>
+            <Text style={styles.headerTitle}>Choose transaction</Text>
+          </View>
+          <View style={styles.content}>
             <ActionButton
-              onPress={() => closeWrapper(addTransaction)}
-              action="add-transaction"
+              onPress={() => handleOnChange("expense")}
+              action="expense"
               margin
             />
             <ActionButton
-              onPress={() => closeWrapper(addAccount)}
-              action="add-account"
+              onPress={() => handleOnChange("income")}
+              action="income"
               margin
-            />
-            <ActionButton
-              onPress={() =>
-                closeWrapper(() => SheetManager.show(MAKE_TRANSFER_SHEET))
-              }
-              action="make-transfer"
             />
           </View>
         </View>
@@ -93,6 +74,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#1c1c1c",
     padding: 16,
   },
+  header: {
+    paddingVertical: 20,
+  },
   indicatorContainer: {
     alignItems: "center",
     marginBottom: 15,
@@ -107,6 +91,15 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flex: 1,
   },
+  content: {
+    alignItems: "flex-start",
+    flex: 1,
+  },
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });
 
-export default AddActionModal;
+export default ChooseTransactionTypeModal;
